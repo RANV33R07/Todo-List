@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <div id="navbar">
+            <h1>Todo App</h1>
+        </div>
+        <form action="/add" method="post">
+            <div id="inputHandler">
+                <input type="text" name="title" placeholder="Enter todo...">   
+                <button class="green" type="submit">Add</button> 
+            </div>
+        </form>
+        <div id="list">
+            {% if todo_list|length == 0 %}
+            <h4 style="color: red; display: flex; justify-content: center;">No Record Found</h4>
+            {% endif %}
+            {% for i in todo_list %}
+            <div class="item">
+                    <div id="title">
+                        {{i.id}} . {{i.title}}
+                    </div>
+    
+                    <div id="done">
+                        {% if i.complete == False %}
+                        <h4 id="not">Not Completed</h4>
+                    {% else %}
+                        <h4 id="yes">Completed</h4>
+                    {% endif %}
+                    </div>  
+                <div id="impButtons">
+                    <a href="{{ url_for('update', todo_id=i.id) }}">
+                        <button class="green">Update</button>
+                    </a>
+                    
+                    <!-- Delete Button -->
+                    <form action="{{ url_for('delete', todo_id=i.id) }}" method="post" style="display:inline;">
+                        <button class="red" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <form action="{{ url_for('deleteAll') }}" method="post" style="display:inline;">
+            <button class="red" type="submit">Delete All</button>
+        </form> 
+    </div>
+</body>
+</html>

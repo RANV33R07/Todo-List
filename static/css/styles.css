@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #536976;
+    background: -webkit-linear-gradient(to right, #292E49, #536976);
+    background: linear-gradient(to right, #292E49, #536976);
+    
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#navbar {
+    background-color: #007bff;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    height: 100px;
+}
+
+form #inputHandler {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: space-between;
+    border: 2px solid #ced4da;
+}
+
+form #inputHandler label {
+    font-size: 18px;
+    color: #495057;
+}
+
+form #inputHandler input {
+    font-size: 18px;
+    height: 50px;
+    width: 500px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form #inputHandler input:focus {
+    border: 2px solid #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.05);
+}
+
+.green {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+}
+
+.red {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+}
+
+.green:active {
+    background-color: #218838;
+}
+
+.red:active {
+    background-color: #c82333;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#list #title {
+    width: 350px;
+    font-weight: 500;
+    color: #343a40;
+    font-size: 20px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#list #done {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;   
+}
+
+#list #done #not{
+    background-color: lightcoral;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 3px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+#list #done #yes{
+    background-color: lightgreen;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 3px solid green;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+#list #impButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.item {
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #dee2e6; /* Light gray border */
+    padding: 10px;
+    background-color: #ffffff; /* White background for each item */
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.04); /* Slight scaling effect on hover */
+}
+
+/* Handle text overflow for each item */
+.item #title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." when text is too long */
+}
